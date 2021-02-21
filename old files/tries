@@ -1,0 +1,111 @@
+time for adding to 0 : 41700ms
+time for adding to 1 : 293877ms
+time for adding to 2 : 61ms
+time for adding to 3 : 33520ms
+time for adding to 4 : 56ms
+
+time for 'contains' to0:50ns
+time for 'contains' to1:61ns
+time for 'contains' to2:175ns
+time for 'contains' to3:539058ns
+time for 'contains' to4:43ns
+
+time for 'contains' to0:565057ns
+time for 'contains' to1:5799101ns
+time for 'contains' to2:160ns
+time for 'contains' to3:575015ns
+time for 'contains' to4:28ns
+
+time for adding to 0 : 37ms
+time for adding to 1 : 24ms
+time for adding to 2 : 35ms
+time for adding to 3 : 20106ms
+time for adding to 4 : 7ms
+
+time for 'contains' to0:25ns
+time for 'contains' to1:27ns
+time for 'contains' to2:75ns
+time for 'contains' to3:175ns
+time for 'contains' to4:39ns
+
+time for 'contains' to0:10ns
+time for 'contains' to1:304ns
+time for 'contains' to2:130ns
+time for 'contains' to3:456832ns
+time for 'contains' to4:8ns
+
+
+
+
+time for adding to 0 : 38786 ms
+time for adding to 1 : 272045 ms
+time for adding to 2 : 50 ms
+time for adding to 3 : 34419 ms
+time for adding to 4 : 56 ms
+
+time for 'contains' hi to 0 : 47 ns
+time for 'contains' hi to 1 : 52 ns
+time for 'contains' hi to 2 : 168 ns
+time for 'contains' hi to 3 : 464984 ns
+time for 'contains' hi to 4 : 15 ns
+
+time for 'contains' -13170890158 to 0 : 567538 ns
+time for 'contains' -13170890158 to 1 : 5488942 ns
+time for 'contains' -13170890158 to 2 : 160 ns
+time for 'contains' -13170890158 to 3 : 549094 ns
+time for 'contains' -13170890158 to 4 : 22 ns
+
+time for adding to 0 : 169 ms
+time for adding to 1 : 22 ms
+time for adding to 2 : 33 ms
+time for adding to 3 : 20577 ms
+time for adding to 4 : 6 ms
+
+time for 'contains' 23 to 0 : 127 ns
+time for 'contains' 23 to 1 : 26 ns
+time for 'contains' 23 to 2 : 83 ns
+time for 'contains' 23 to 3 : 90 ns
+time for 'contains' 23 to 4 : 23 ns
+
+time for 'contains' hi to 0 : 11 ns
+time for 'contains' hi to 1 : 32 ns
+time for 'contains' hi to 2 : 216 ns
+time for 'contains' hi to 3 : 439008 ns
+time for 'contains' hi to 4 : 7 ns
+
+
+time for adding to 0 : 37941 ms
+time for adding to 1 : 272128 ms
+time for adding to 2 : 59 ms
+time for adding to 3 : 35207 ms
+time for adding to 4 : 63 ms
+
+time for 'contains' hi to 0 : 49 ns
+time for 'contains' hi to 1 : 51 ns
+time for 'contains' hi to 2 : 159 ns
+time for 'contains' hi to 3 : 461377 ns
+time for 'contains' hi to 4 : 17 ns
+
+time for 'contains' -13170890158 to 0 : 569775 ns
+time for 'contains' -13170890158 to 1 : 4953686 ns
+time for 'contains' -13170890158 to 2 : 178 ns
+time for 'contains' -13170890158 to 3 : 571366 ns
+time for 'contains' -13170890158 to 4 : 20 ns
+
+time for adding to 0 : 181 ms
+time for adding to 1 : 23 ms
+time for adding to 2 : 35 ms
+time for adding to 3 : 21247 ms
+time for adding to 4 : 9 ms
+
+time for 'contains' 23 to 0 : 22 ns
+time for 'contains' 23 to 1 : 21 ns
+time for 'contains' 23 to 2 : 74 ns
+time for 'contains' 23 to 3 : 88 ns
+time for 'contains' 23 to 4 : 20 ns
+
+time for 'contains' hi to 0 : 6 ns
+time for 'contains' hi to 1 : 154 ns
+time for 'contains' hi to 2 : 187 ns
+time for 'contains' hi to 3 : 459679 ns
+time for 'contains' hi to 4 : 8 ns

@@ -1,0 +1,69 @@
+daniel.brown1
+
+
+=============================
+=      File description     =
+=============================
+1) SimpleHashSet.java- the SimpleHashSet class
+2) OpenHashSet.java- the OpenHashSet class
+3) ClosedHashSet.java- the ClosedHashSet class
+4) CollectionFacadeSet.java- the Collection Facade
+5) SimpleSetPerformanceAnalyzer.java- the analyzer for checking running times
+6) ClosedCell- a class that represents a cell in the closed hash set. has a String and 'isDeleted' fields. each closed
+hash set is a an array of ClosedCell instances
+7) OpenCell- a class that represents a cell in the open hash set. has a linked list of strings field. each open
+   hash set is a an array of OpenCell instances
+8) README
+9) RESULTS
+
+=============================
+=    Answers to questions   =
+=============================
+-number of iterations for warm up-
+I chose to use 20000 iterations.
+
+-explain the open hash implementation-
+I built a class called 'OpenCell'. every instace of this class has one field- a linked list of strings. theres a getter
+function that returns the size of the cell (=linked list), using the builtin 'size' function of the linked list library.
+
+-explain the closed hash implementation-
+I built a class called 'ClosedCell'. every instace of this class has two fields- a string and a 'isDeleted' flag.
+additionally, there are a few getter and setter function. the isDeleted flag is a boolean variable that is signed 'true'
+if there was a string in the cell. this way I know will iterating over the numbers smaller then capacity when did
+I reach a place from where there will be no more strings.
+
+-The results of the analysis- all of the best results are showing the the RESULT document.
+
+-Discuss the results of the analysis in depth.
+● Account, in separate, for OpenHashSet’s and ClosedHashSet’s bad results for data1.txt.
+my worst results for adding data1.txt to OpenHashSet and ClosedHashSet are:
+time for adding to data1.txt to OpenHashSet : 41700ms
+time for adding to data1.txt to ClosedHashSet : 293877ms
+
+● Summarize the strengths and weaknesses of each of the data structures as reflected by
+the results. Which would you use for which purposes?
+it seems like the HashSet is the best data structure by far for all purposes.
+on contrary, linked list seems pretty poorly-functioning in most ways (even worst then mine!)
+the tree set has some pretty good results, it's not as good as the HashSet and much better then the linked list.
+
+● How did your two implementations compare between themselves?
+it depends- the two worst functions were adding for data 1 and contains for the -1317... number.
+in contrary, contains(hi), adding data2, contains (23) were pretty good, even not-so-bad in contrary
+to java's running times.
+it seems that the closed set is far better in adding data 2 then the open set, and that the open set is far better in
+contain(hi) then the closed set.
+
+● How did your implementations compare to Java’s built in HashSet?
+as previously said, java's hash set was far better then mine, ad kedey meot achuzim.
+
+● What results surprised you and which did you expect?
+I was surprised with how bad went 'contains' -13170890158 and how good went contain(23) and contain(hi).
+I expected not so good adding results, as happend.
+
+● If you tried clamping expressions to valid indices in more than one way, what were they
+and how significant was the speed-up?
+I used only the shorter expression (with &), so I can't say...
+
+
+
+

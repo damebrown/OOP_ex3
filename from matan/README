@@ -1,0 +1,150 @@
+mattan
+
+
+=============================
+=      File description     =
+=============================
+LinkedListWrapper -  A class that wraps a linked list of strings. It uses some of the exact same methods
+that linked list does.
+
+MarkedString -  A class used for differentiating between null cells and deleted cells. Strings added to the
+set are wrapped by this class. A deleted cell's value is set to null, but the MarkedString object still
+exists.
+
+
+
+
+=============================
+=          Design           =
+=============================
+I chose to implement Spaceship as an abstract base class rather than an interface, since not every ship
+implements teleportation, shielding, and firing but only some of them. If it would have been an interface,
+every ship would have to implement an empty method for the functionalities that it does not possess. This way
+the empty methods are written only once in the SpaceShip Class.
+
+Also it is easier to add new abstract methods to a base class then to an interface since with an interface
+every ship that implements it would have to add a method. Another possibility that I considered was to make a
+seperate interface for each action, but I didn't like that the code was so scattered.
+
+I liked that the order of actions is very clear inside the doAction method of SpaceShip and that new methods
+that have to be executed at each round could easily be added there.
+
+
+==========================================================
+=    Answers to questions / Implementation details   =
+==========================================================
+
+*************************************************OpenHashSet**************************************************
+
+For the implementation of OpenHashSet I chose to use an array of LinkedLists of Strings. To do this I used
+created a wrapper class for LinkedList<String> called LinkedListWrapper. Every time an item is added to a
+cell, the "new bucket" function checks whether the cell is null, and if so it creates a new linked list. After
+this check, the value is added.
+
+***********************************************ClosedHashSet**************************************************
+
+In order deal with item deletion in Closed Hash Set, I used a new class - MarkedString - that contains a
+single data member "value".  Whenever an item is added to the set, a new MarkedString object is initialized
+with the value of that item. To differentiate between null and deleted values, when removing a value from the
+set, the MarkedString's object is set to null, but it still exists in the memory.
+
+*************************************************Results******************************************************
+
+#These values correspond to the time it takes (in ms) to insert data1 to all data structures
+OpenHashSet_AddData1 = 34026
+ClosedHashSet_AddData1 = 356271
+TreeSet_AddData1 = 42
+LinkedList_AddData1 = 28690
+HashSet_AddData1 = 37
+
+#These values correspond to the time it takes (in ms) to insert data2 to all data structures
+OpenHashSet_AddData2 = 50
+ClosedHashSet_AddData2 = 21
+TreeSet_AddData2 = 34
+LinkedList_AddData2 = 33754
+HashSet_AddData2 = 11
+
+#These values correspond to the time it takes (in ns) to check if "hi" is contained in
+#the data structures initialized with data1
+OpenHashSet_Contains_hi1 = 24
+ClosedHashSet_Contains_hi1 = 32
+TreeSet_Contains_hi1 = 88
+LinkedList_Contains_hi1 = 1088295
+HashSet_Contains_hi1 = 16
+
+#These values correspond to the time it takes (in ns) to check if "-13170890158" is contained in
+#the data structures initialized with data1
+OpenHashSet_Contains_negative = 1206444
+ClosedHashSet_Contains_negative = 3834541
+TreeSet_Contains_negative = 117
+LinkedList_Contains_negative = 1154191
+HashSet_Contains_negative = 21
+
+#These values correspond to the time it takes (in ns) to check if "23" is contained in
+#the data structures initialized with data2
+OpenHashSet_Contains_23 = 33
+ClosedHashSet_Contains_23 = 41
+TreeSet_Contains_23 = 40
+LinkedList_Contains_23 = 114
+HashSet_Contains_23 = 36
+
+#These values correspond to the time it takes (in ns) to check if "hi" is contained in
+#the data structures initialized with data2
+OpenHashSet_Contains_hi2 = 379
+ClosedHashSet_Contains_hi2 = 23
+TreeSet_Contains_hi2 = 65
+LinkedList_Contains_hi2 = 623355
+HashSet_Contains_hi2 = 10
+
+**************************************WarmUp Phase Iterations*************************************************
+                                               50000
+
+*******************************************Result Analysis****************************************************
+
+● Account, in separate, for OpenHashSet’s and ClosedHashSet’s bad results for data1.txt.
+
+    Both hashset's bad results stem from a similar issue. I am referring of course to the fact that all of the
+    items in the list have a purposefully identical hash. In the open hash set what happens is that with every
+    addition to the set, the whole linked list has to be iterated over in order to determine whether or not
+    the item already exists. This takes a longer and longer time with every addition to the set causing major
+    slow down.
+
+    In a similar fashion, ClosedHashSet has to iterate over the whole set every time through, only to find
+    that every cell calculated using the linear probing algorithm has already been filled. Eventually it will
+    hit a null cell and place the value there, but the runtime of each addition rises linearly (1 more cell to
+    look for in every iteration).
+
+● Summarize the strengths and weaknesses of each of the data structures as reflected by
+the results. Which would you use for which purposes?
+
+    Java's builtin HashSet had the best run times in all of the tests, thus I would use it for any purpose that
+    requires using an unordered set. Sets' biggest drawback is also what makes them good for some situations -
+    It is impossible to add two identical elements to them. For operations requiring this type of action I would
+    use LinkedList.
+
+● How did your two implementations compare between themselves?
+    In test number 1 OpenHashSet dominated ClosedHashSet (it took 10% of the time approximately).
+    In test number 2 ClosedHashSet dominated OpenHashSet (it took 50% of the time approximately).
+    In test number 3 OpenHashSet dominated ClosedHashSet (it took 75% of the time approximately).
+    In test number 4 OpenHashSet dominated ClosedHashSet (it took 33% of the time approximately).
+    In test number 5 OpenHashSet dominated ClosedHashSet (it took 75% of the time approximately).
+    In test number 6 ClosedHashSet dominated OpenHashSet (it took 5% of the time approximately).
+
+
+
+● How did your implementations compare to Java’s built in HashSet?
+    They were worse on all tests.
+
+● What results surprised you and which did you expect?
+    I was surprised by how good java's implementation did even with the hash collision test. I wonder how they
+    optimized it so well. I wasn't surprised to see that LinkedList did badly with checking for a specific
+    value.
+
+● Did you find java’s HashSet performance on data1.txt surprising? Can you explain it? Can google?
+    I'm pretty sure google can explain it even though I couldn't find the answer in the last few minutes.
+    However, since this project is time sensitive I will hand it in before I continue the pursuit of truth.
+
+
+● If you tried clamping expressions to valid indices in more than one way, what were they and how significant
+was the speed-up?
+        I did not to my knowledge. I simply used the supplied formulae.
